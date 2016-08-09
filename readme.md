@@ -5,11 +5,11 @@ These functions are designed to rank US hospitals using any version of two parti
 
 ## Repository contents:
 
-best.R : best(state, outcome) - Reads outcome-of-care-measures.cvs and returns a character vector with the name of the hospital that has the best (i.e. lowest) 30-day mortality rate for the specified outcome in that state.
+best.R : best(state, outcome) - Reads outcome-of-care-measures.csv and returns a character vector with the name of the hospital that has the best (i.e. lowest) 30-day mortality rate for the specified outcome in that state.
 
-rankall.R : rankall(
+rankhospital.R : rankhospital(state, outcome, num="best") - Reads outcome-of-care-measures.csv and returns a character containing the name of the hospital in the given state that has the given ranking for the given outcome.
 
-rankhospital.R : rankhospital(
+rankall.R : rankall(outcome, num="best") - Reads outcome-of-care-measures.csv and returns a 2-column data frame containing the hospitals in each state that have the ranking specified by "num" for the given outcome.
 
 outcome-of-care-measures.csv : 30-day mortality and readmission rates for heart attacks, heart failure, and pneumonia
 
