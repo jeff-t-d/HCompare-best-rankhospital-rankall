@@ -1,34 +1,20 @@
-# See also: Swirl 12 (Looking at Data), 13 (Simulation),
-# and 15 (Base Graphics).
+# best() takes two arguments:
+# * the 2-character abbreviated name of a state ("state")
+# * an outcome name ("outcome")
 #
-# best() takes two arguments: the
-# 2-character abbreviated name of a state, and an outcome name.
-# The function reads outcome-of-care-measures.cvs and returns a
-# character vector with the name of the hospital that has the
-# best (i.e. lowest) 30-day mortality for the specified outcome
-# in that state. The hospital name is the name provided in the
-# Hospital.Name variable. The outcomes can be one of "heart
-# attack," "heart failure," or "pneumonia." Hospitals that do not
-# have data on a particular outcome are excluded from the
-# set of hospitals when deciding the rankings.
+# It reads outcome-of-care-measures.cvs and returns a character
+# vector with the name of the hospital that has the best
+# (i.e. lowest) 30-day mortality rate for the specified outcome
+# in that state, via $Hospital.Name. The outcomes can be "heart
+# attack," "heart failure," or "pneumonia." Outcome data is
+# drawn From the 11th, 17th, and 23rd column of the .cvs file.
+# Hospitals that do not have data on a particular outcome
+# are excluded from the set of rankings.
 #
-# The function uses the following template:
-#
-# best <- function(state, outcome) {
-    ## Read outcome data
-    
-    ## Check the state and outcome are valid
-    
-    ## Return hospital name in that state with lowest
-    ## 30-day death rate
-# }
-#
-# best() checks the validity of its arguments. If
-# an invalid "state" value is passed to best(), the function
-# throws an error via the stop() function with the
-# message "invalid state". If an invalid "outcome" value is
-# passed to best(), the function throws an error via
-# stop() with the message "invalid outcome".
+# It checks the validity of its arguments. If an invalid
+# "state" value is passed, the function will
+# stop("invalid state"). If an invalid "outcome" value is
+# passed, the function will stop("invalid outcome").
 #
 # Sample output:
 #
@@ -48,11 +34,7 @@
 #
 ################################################################
 #
-# best()
-# 
-# "heart attack" = column 11
-# "heart failure" = column 17
-# "pneumonia" = column 23
+#       best(state, outcome)
 #
 ################################################################
 #
