@@ -2,7 +2,7 @@
 # * outcome : an outcome name ("heart attack", "heart failure", "pneumonia")
 # * num : an integer indicating hospital ranking; can also take "best" or "worst"
 #
-# It reads the outcome-of-care-measures.csv file and returns
+# It reads outcome-of-care-measures.csv and returns
 # a 2-column data frame containing the hospital in each state that
 # has the ranking specified in "num". For example, calling
 # rankall("heart attack", "best") returns a data frame
