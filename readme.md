@@ -1,5 +1,5 @@
 ## Summary:
-These functions are designed to rank US hospitals using ny version of two particular .csv files provided by the Hospital Compare database (http://hospitalcompare.hhs.gov). HCompare is run by the US Dept of Health & Human Services, and "provides data about the quality of care at over 4,000 Medicare-certified hospitals in the US." The two .csv files (outcome-of-care-measures.csv & hospital-data.csv) report 30-day mortality and readmission rates for three variables (heart attacks, heart failure, and pneumonia) and contain identifying information for each hospital.
+These functions are designed to rank US hospitals using any version of two particular .csv files provided by the Hospital Compare database (http://hospitalcompare.hhs.gov). HCompare is run by the US Dept of Health & Human Services, and "provides data about the quality of care at over 4,000 Medicare-certified hospitals in the US." The two .csv files (outcome-of-care-measures.csv & hospital-data.csv) report 30-day mortality and readmission rates for three variables (heart attacks, heart failure, and pneumonia) and contain identifying information for each hospital.
 
 --
 
