@@ -1,6 +1,6 @@
 # best() takes two arguments:
-# * the 2-character abbreviated name of a state ("state")
-# * an outcome name ("outcome")
+# * state: the 2-character abbreviated name of a state
+# * outcome: an outcome name ("heart attack", "heart failure", "pneumonia")
 #
 # It reads outcome-of-care-measures.cvs and returns a character
 # vector with the name of the hospital that has the best
