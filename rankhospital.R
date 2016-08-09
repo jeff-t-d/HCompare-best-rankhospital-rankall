@@ -1,13 +1,11 @@
-# See also: Swirl 12 (Looking at Data), 13 (Simulation),
-# and 15 (Base Graphics).
+# rankhospital() takes three arguments:
+# * state : the 2-character abbreviated name of a state
+# * outcome : an outcome name ("heart attack", "heart failure", "pneumonia")
+# * num : the ranking of a hospital
 #
-# Rankhospital() takes three
-# arguments: the 2-character abbreviated name of a state
-# ("state"), an outcome ("outcome"), and the ranking of a hospital
-# in that state for that outcome ("num"). The function reads the
-# outcome-of-care-measures.csv file and returns a character vector
+# It reads outcome-of-care-measures.csv and returns a character vector
 # with the name of the hospital that has the ranking specified
-# by the "num" argument. For example, the call
+# by the "num" argument. For example, calling
 #
 # > rankhospital("MD", "heart failure", 5)
 #
@@ -16,33 +14,18 @@
 # failure. The "num" argument can take values "best", "worst",
 # or an integer indicating the ranking (smaller numbers are better).
 # If the number given by "num" is larger than the number of
-# hospitals in that state, then the function returns NA.
+# hospitals in that state, the function returns NA.
 # Hospitals that do not have data on a particular outcome are be
 # excluded from the set of hospitals when deciding the rankings.
 #
 # If there is a tie for 30-day mortality rate for a given cause
-# of death, the tie should be broken by using the hospital name
-# that comes first alphabetically. You can use order() to sort
-# multiple vectors in this manner (i.e. where one vector is used
-# to break ties in another vector).
-#
-# The function uses the following template:
-#
-# rankhospital <- function(state, outcome, num = "best") {
-#     ## Read outcome data
-#     
-#     ## Check that state and outcome are valid
-#     
-#     ## Return hospital name in that state with the given rank
-#     ## 30-day death rate
-# }
+# of death, the tie is broken by using the hospital name
+# that comes first alphabetically.
 #
 # The function checks the validity of its arguments. If
-# an invalid "state" value is passed to best(), the function
-# throws an error via the stop() function with the
-# message "invalid state". If an invalid "outcome" value is
-# passed to best(), the function throws an error via the
-# stop() function with the message "invalid outcome".
+# an invalid "state" value is passed, the function
+# will stop("invalid state"). If an invalid "outcome" value is
+# passed, the function will stop("invalid outcome").
 #
 # Sample output:
 #
@@ -56,16 +39,7 @@
 #
 ###############################################################
 #
-# rankhospital()
-#
-# state: 2-character abbreviated name of a state
-# outcome: "heart attack" (col11), "heart failure" (col17),
-#   "pneumonia" (col23)
-# num: hospital rank (assumes "best"); takes "worst" or integer
-#   If provided value for "num" is higher than range, returns NA.
-#   Excludes hospitals that don't have data on a particular outcome.
-#
-# If tied, breaks using order() and sorts alphabetically
+#       rankhospital(state, outcome, num="best")
 #
 ###############################################################
 #
@@ -95,5 +69,4 @@ rankhospital <- function(state, outcome, num = "best") {
         else if(num == "worst") {(sortedcleangroup[nrow(sortedcleangroup),1])}
         else if(num > nrow(sortedcleangroup)) {stop("NA")}
         else{(sortedcleangroup[num,1])}
-
 }
