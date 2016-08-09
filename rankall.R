@@ -1,11 +1,10 @@
-# See also: Swirl 12 (Looking at Data), 13 (Simulation),
-# and 15 (Base Graphics).
+# rankall() takes two arguments:
+# * outcome : an outcome name ("heart attack", "heart failure", "pneumonia")
+# * num : an integer indicating hospital ranking; can also take "best" or "worst"
 #
-# rankall() takes two arguments: an
-# outcome name ("outcome"), and a hospital ranking ("num"). The
-# function reads the outcome-of-care-measures.csv file and returns
+# It reads the outcome-of-care-measures.csv file and returns
 # a 2-column data frame containing the hospital in each state that
-# has the ranking specified in "num". For example, the function call
+# has the ranking specified in "num". For example, calling
 # rankall("heart attack", "best") returns a data frame
 # containing the names of the hospitals that are the best in their
 # respective states for 30-day heart attack death rates. The first
@@ -17,46 +16,17 @@
 #
 # Ties are handled alphabetically.
 #
-# The function uses the following template:
-#
-# rankall <- function(outcome, num = "best") {
-#     ## Read outcome data
-#    
-#     ## Check that state and outcome are valid
-#    
-#     ## For each state, find the hospital of the given rank
-#    
-#     ## Return a data frame with the hospital names and the
-#     ## (abbreviated) state name
-# }
-# 
-# NOTE: The function does not not call rankhospital().
-#
 # The function checks the validity of its arguments. If an
-# invalid "outcome" value is passed to rankall(), the function
-# throws an error via the stop() function with the
-# message "invalid outcome". The "num" variable can take values
+# invalid "outcome" value is passed, the function
+# will stop("invalid outcome"). The "num" variable can take values
 # "best", "worst", or an integer indicating the ranking (smaller
 # numbers are better). If the number given by "num" is larger
-# than the number of hospitals in that state, then the function
+# than the number of hospitals in that state, the function
 # returns NA.
-#
-# Sample output for the function can be found in readme.pdf.
 #
 ######################################################################
 #
-# rankall()
-#
-# outcome: "heart attack" (col11), "heart failure" (col17),
-#   "pneumonia" (col23)
-# num: assumes "best"; takes "worst" or integer
-#   If provided value for "num" is higher than range, returns NA.
-#   Excludes hospitals that don't have data on a particular outcome.
-#
-# If tied, breaks using order() and sorts alphabetically
-#
-# Col1 = "Hospital"
-# Col2 = "State"
+#       rankall(outcome, num="best"))
 #
 ######################################################################
 #
