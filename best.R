@@ -29,7 +29,7 @@
 # [1] "GREATER BALTIMORE MEDICAL CENTER"
 # > best("BB", "heart attack")
 # Error in best("BB", "heart attack") : invalid state
-# > best("NY", "hert attack")
+# > best("NY", "heart attack")
 # Error in best("NY", "hert attack") : invalid outcome
 #
 ################################################################
